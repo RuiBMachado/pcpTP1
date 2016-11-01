@@ -2,17 +2,18 @@
 # include <stdio.h>
 # include <math.h>
 # include <time.h>
-# include <omp.h>
+# include <string.h>
+//# include <omp.h>
 
-# define M 200
-# define N 200
+# define M 500
+# define N 500
 # define N_THREADS 1
 
 
 
 /******************************************************************************/
 
-int main ( int argc, char *argv[] ){
+int main (int argc, char *argv[] ){
 
 
   
@@ -29,7 +30,11 @@ int main ( int argc, char *argv[] ){
   double u[M][N];
   double w[M][N];
 
-  omp_set_num_threads(N_THREADS);
+  epsilon = atof(argv[1]);
+  strcpy(output_file,argv[2]);
+
+
+  //omp_set_num_threads(N_THREADS);
 
   printf ( "\n" );
   printf ( "HEATED_PLATE\n" );
@@ -43,8 +48,8 @@ int main ( int argc, char *argv[] ){
 */
   
   printf ( "\n" );
-  printf ( "  Enter EPSILON, the error tolerance:\n" );
-  success = scanf ( "%f", &epsilon );
+  printf ( "  For EPSILON = %f, the error tolerance:\n",epsilon );
+
   
   printf ( "\n" );
   printf ( "  The iteration will be repeated until the change is <= %f\n", epsilon );
@@ -53,18 +58,10 @@ int main ( int argc, char *argv[] ){
   Read OUTPUT_FILE from the command line or the user.
 */
   printf ( "\n" );
-  printf ( "  Enter OUTPUT_FILE, the name of the output file:\n" );
-  success = scanf ( "%s", output_file );
+  printf ( "  %s, the name of the output file:\n",output_file );
   
   
 
-  if ( success != 1 )
-  {
-    printf ( "\n" );
-    printf ( "HEATED_PLATE\n" );
-    printf ( "  Error reading in the value of OUTPUT_FILE.\n");
-    return 1;
-  }
 
   printf ( "\n" );
   printf ( "  The steady state solution will be written to %s.\n", output_file );
@@ -98,7 +95,7 @@ int main ( int argc, char *argv[] ){
   printf ( "\n" );
   printf ( " Iteration  Change\n" );
   printf ( "\n" );
-  double start = omp_get_wtime(); //inicio contagem do tempo
+  //double start = omp_get_wtime(); //inicio contagem do tempo
 
   while ( epsilon <= diff )
   {
@@ -136,14 +133,14 @@ int main ( int argc, char *argv[] ){
       iterations_print = 2 * iterations_print;
     }
   } 
- double end = omp_get_wtime();  //fim da contagem do tempo
+ //double end = omp_get_wtime();  //fim da contagem do tempo
 
     
   printf ( "\n" );
   printf ( "  %8d  %f\n", iterations, diff );
   printf ( "\n" );
   printf ( "  Error tolerance achieved.\n" );
-  printf("Concluido com %d threads em %f segundos.\n", N_THREADS, (end-start));
+  //printf("Concluido com %d threads em %f segundos.\n", N_THREADS, (end-start));
 /*
   Write the solution to the output file.
 */
