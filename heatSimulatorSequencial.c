@@ -3,7 +3,7 @@
 # include <math.h>
 # include <time.h>
 # include <string.h>
-//# include <omp.h>
+# include <omp.h>
 
 # define M 500
 # define N 500
@@ -34,7 +34,7 @@ int main (int argc, char *argv[] ){
   strcpy(output_file,argv[2]);
 
 
-  //omp_set_num_threads(N_THREADS);
+  omp_set_num_threads(N_THREADS);
 
   printf ( "\n" );
   printf ( "HEATED_PLATE\n" );
@@ -95,7 +95,7 @@ int main (int argc, char *argv[] ){
   printf ( "\n" );
   printf ( " Iteration  Change\n" );
   printf ( "\n" );
-  //double start = omp_get_wtime(); //inicio contagem do tempo
+  double start = omp_get_wtime(); //inicio contagem do tempo
 
   while ( epsilon <= diff )
   {
@@ -133,14 +133,14 @@ int main (int argc, char *argv[] ){
       iterations_print = 2 * iterations_print;
     }
   } 
- //double end = omp_get_wtime();  //fim da contagem do tempo
+ double end = omp_get_wtime();  //fim da contagem do tempo
 
     
   printf ( "\n" );
   printf ( "  %8d  %f\n", iterations, diff );
   printf ( "\n" );
   printf ( "  Error tolerance achieved.\n" );
-  //printf("Concluido com %d threads em %f segundos.\n", N_THREADS, (end-start));
+  printf("Concluido com %d threads em %f segundos.\n", N_THREADS, (end-start));
 /*
   Write the solution to the output file.
 */
