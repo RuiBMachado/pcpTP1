@@ -14,3 +14,6 @@ scp -r nome axxxxx@search1.di.uminho.pt:nome
 
 carregar modulo:
 module load gnu/4.9.0
+
+Compilar com OPENMP 
+gcc -o XXX -fopenmp XXX.c
