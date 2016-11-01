@@ -18,6 +18,4 @@ module load gnu/4.9.0
 Compilar com OPENMP 
 gcc -o XXX -fopenmp XXX.c
 
-mandar ficheiros do search pro pc:
-
-scp axxxx@search1.di.uminho.pt:nome do ficheiros /Users/Rui(mudar isto)/Desktop/:nome do ficheiro
+mandar ficheiros do search pro pc: scp axxxx@search1.di.uminho.pt:nome do ficheiros /Users/Rui(mudar isto)/Desktop/:nome do ficheiro
