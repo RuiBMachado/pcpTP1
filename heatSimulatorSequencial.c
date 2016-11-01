@@ -7,7 +7,7 @@
 
 # define M 500
 # define N 500
-# define N_THREADS 1
+
 
 
 
@@ -32,6 +32,7 @@ int main (int argc, char *argv[] ){
 
   epsilon = atof(argv[1]);
   strcpy(output_file,argv[2]);
+  int N_THREADS = atoi(argv[3]);
 
 
   omp_set_num_threads(N_THREADS);
