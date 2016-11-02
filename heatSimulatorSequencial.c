@@ -1,9 +1,9 @@
-# include <stdlib.h>
-# include <stdio.h>
-# include <math.h>
-# include <time.h>
-# include <string.h>
-# include <omp.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include <string.h>
+#include <omp.h>
 
 # define M 500
 # define N 500
@@ -17,8 +17,8 @@ int main (int argc, char *argv[] ){
 
 
   
-  double diff;
-  float epsilon;
+  double diff=0.0;
+  float epsilon=0.0;
   FILE *fp;
   int i;
   int iterations;
@@ -33,39 +33,11 @@ int main (int argc, char *argv[] ){
   epsilon = atof(argv[1]);
   strcpy(output_file,argv[2]);
   int N_THREADS = atoi(argv[3]);
+  diff = epsilon;
 
 
   omp_set_num_threads(N_THREADS);
 
-  printf ( "\n" );
-  printf ( "HEATED_PLATE\n" );
-  printf ( "  C version\n" );
-  printf ( "  A program to solve for the steady state temperature distribution\n" );
-  printf ( "  over a rectangular plate.\n" );
-  printf ( "\n" );
-  printf ( "  Spatial grid of %d by %d points.\n", M, N );
-/* 
-  Read EPSILON from the command line or the user.
-*/
-  
-  printf ( "\n" );
-  printf ( "  For EPSILON = %f, the error tolerance:\n",epsilon );
-
-  
-  printf ( "\n" );
-  printf ( "  The iteration will be repeated until the change is <= %f\n", epsilon );
-  diff = epsilon;
-/* 
-  Read OUTPUT_FILE from the command line or the user.
-*/
-  printf ( "\n" );
-  printf ( "  %s, the name of the output file:\n",output_file );
-  
-  
-
-
-  printf ( "\n" );
-  printf ( "  The steady state solution will be written to %s.\n", output_file );
 /* 
   Set the boundary values, which don't change. 
 */
