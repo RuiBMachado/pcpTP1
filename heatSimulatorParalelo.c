@@ -18,6 +18,7 @@ int main (int argc, char *argv[] ){
 
   
   double diff=0.0;
+  double diffthread=0.0;
   float epsilon=0.0;
   FILE *fp;
   int i;
@@ -41,23 +42,29 @@ int main (int argc, char *argv[] ){
 /* 
   Set the boundary values, which don't change. 
 */
+#pragma omp parallel shared(w) private(i,j)
+    {
+#pragma omp for
   for ( i = 1; i < M - 1; i++ )
   {
     w[i][0] = 0.0;
   }
+#pragma omp for
   for ( i = 1; i < M - 1; i++ )
   {
     w[i][N-1] = 0.0;
   }
+#pragma omp for
   for ( j = 0; j < N; j++ )
   {
     w[M-1][j] = 100.0;
   }
+#pragma omp for
   for ( j = 0; j < N; j++ )
   {
     w[0][j] = 0.0;
   }
-
+    }
 
 /* 
   iterate until the  new solution W differs from the old solution U
@@ -70,35 +77,64 @@ int main (int argc, char *argv[] ){
   printf ( "\n" );
   double start = omp_get_wtime(); //inicio contagem do tempo
 
-  while ( epsilon <= diff )
-  {
-/*
-  Save the old solution in U.
-*/
-    for ( i = 0; i < M; i++ ) 
+    while ( epsilon <= diff )
     {
-      for ( j = 0; j < N; j++ )
-      {
-        u[i][j] = w[i][j];
-      }
-    }
-/*
-  Determine the new estimate of the solution at the interior points.
-  The new solution W is the average of north, south, east and west neighbors.
-*/
-    diff = 0.0;
-    for ( i = 1; i < M - 1; i++ )
-    {
-      for ( j = 1; j < N - 1; j++ )
-      {
-        w[i][j] = ( u[i-1][j] + u[i+1][j] + u[i][j-1] + u[i][j+1] ) / 4.0;
-
-        if ( diff < fabs ( w[i][j] - u[i][j] ) )
+# pragma omp parallel shared (u,w) private (i,j)
         {
-          diff = fabs ( w[i][j] - u[i][j] );
+            /*
+             Save the old solution in U.
+             */
+# pragma omp for
+            for ( i = 0; i < M; i++ )
+            {
+                for ( j = 0; j < N; j++ )
+                {
+                    u[i][j] = w[i][j];
+                }
+            }
+            /*
+             Determine the new estimate of the solution at the interior points.
+             The new solution W is the average of north, south, east and west neighbors.
+             */
+# pragma omp for
+            for ( i = 1; i < M - 1; i++ )
+            {
+                for ( j = 1; j < N - 1; j++ )
+                {
+                    w[i][j] = ( u[i-1][j] + u[i+1][j] + u[i][j-1] + u[i][j+1] ) / 4.0;
+                }
+            }
         }
-      }
-    }
+        /*
+         C and C++ cannot compute a maximum as a reduction operation.
+         
+         Therefore, we define a private variable MY_DIFF for each thread.
+         Once they have all computed their values, we use a CRITICAL section
+         to update DIFF.
+         */
+        diff = 0.0;
+# pragma omp parallel shared (diff,u,w) private (i,j,diffthread)
+        {
+            diffthread = 0.0;
+# pragma omp for
+            for ( i = 1; i < M - 1; i++ )
+            {
+                for ( j = 1; j < N - 1; j++ )
+                {
+                    if ( diffthread < fabs ( w[i][j] - u[i][j] ) )
+                    {
+                        diffthread = fabs ( w[i][j] - u[i][j] );
+                    }
+                }
+            }
+# pragma omp critical
+            {
+                if ( diff < diffthread )
+                {
+                    diff = diffthread;
+                }
+            }
+        }
     iterations++;
     if ( iterations == iterations_print )
     {
@@ -137,8 +173,6 @@ int main (int argc, char *argv[] ){
 /* 
   All done! 
 */
-  printf ( "\n" );
-  printf ( "HEATED_PLATE:\n" );
   printf ( "  Normal end of execution.\n" );
 
   return 0;
