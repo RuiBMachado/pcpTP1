@@ -1368,7 +1368,7 @@ Concluido com 1 threads em 8.525312 segundos.
      13354  0.001000
 
   Error tolerance achieved.
-Concluido com 2 threads em 4.216239 segundos.
+Concluido com 2 threads em 4.716239 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
