@@ -1275,30 +1275,7 @@ Concluido com 40 threads em 1.631255 segundos.
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
 
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377314
-       128  0.188316
-       256  0.088700
-       512  0.035352
-      1024  0.010278
-      2048  0.001234
-
-      2151  0.000999
-
-  Error tolerance achieved.
-Concluido com 48 threads em 1.746223 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
 REP 2
 1 thread
 
@@ -1500,30 +1477,7 @@ Concluido com 40 threads em 0.140871 segundos.
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
 
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377314
-       128  0.188316
-       256  0.088700
-       512  0.035352
-      1024  0.010278
-      2048  0.001234
-
-      2151  0.000999
-
-  Error tolerance achieved.
-Concluido com 48 threads em 2.263694 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
 REP 3
 1 thread
 
@@ -1725,30 +1679,7 @@ Concluido com 40 threads em 4.931649 segundos.
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
 
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377314
-       128  0.188316
-       256  0.088700
-       512  0.035352
-      1024  0.010278
-      2048  0.001234
-
-      2151  0.000999
-
-  Error tolerance achieved.
-Concluido com 48 threads em 2.226523 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
 REP 4
 1 thread
 
@@ -1950,30 +1881,6 @@ Concluido com 40 threads em 1.883634 segundos.
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
-
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377314
-       128  0.188316
-       256  0.088700
-       512  0.035352
-      1024  0.010278
-      2048  0.001234
-
-      2151  0.000999
-
-  Error tolerance achieved.
-Concluido com 48 threads em 1.807351 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
 REP 5
 1 thread
 
@@ -2175,27 +2082,3 @@ Concluido com 40 threads em 0.783335 segundos.
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
-
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377314
-       128  0.188316
-       256  0.088700
-       512  0.035352
-      1024  0.010278
-      2048  0.001234
-
-      2151  0.000999
-
-  Error tolerance achieved.
-Concluido com 48 threads em 2.181521 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
