@@ -1318,7 +1318,7 @@ Concluido com 48 threads em 18.282816 segundos.
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-REP 3
+REP 2
 1 thread
 
  Iteration  Change
