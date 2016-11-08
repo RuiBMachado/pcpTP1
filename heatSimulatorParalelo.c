@@ -11,7 +11,6 @@
 
 
 
-/******************************************************************************/
 
 int main (int argc, char *argv[] ){
  
@@ -39,9 +38,7 @@ int main (int argc, char *argv[] ){
 
   omp_set_num_threads(N_THREADS);
 
-/* 
-  Set the boundary values, which don't change. 
-*/
+
 #pragma omp parallel shared(w) private(i,j)
     {
 #pragma omp for
@@ -66,10 +63,7 @@ int main (int argc, char *argv[] ){
   }
     }
 
-/* 
-  iterate until the  new solution W differs from the old solution U
-  by no more than EPSILON.
-*/
+
   iterations = 0;
   iterations_print = 1;
   printf ( "\n" );
@@ -81,9 +75,7 @@ int main (int argc, char *argv[] ){
     {
 # pragma omp parallel shared (u,w) private (i,j)
         {
-            /*
-             Save the old solution in U.
-             */
+            
 # pragma omp for
             for ( i = 0; i < M; i++ )
             {
@@ -92,10 +84,7 @@ int main (int argc, char *argv[] ){
                     u[i][j] = w[i][j];
                 }
             }
-            /*
-             Determine the new estimate of the solution at the interior points.
-             The new solution W is the average of north, south, east and west neighbors.
-             */
+            
 # pragma omp for
             for ( i = 1; i < M - 1; i++ )
             {
@@ -105,13 +94,7 @@ int main (int argc, char *argv[] ){
                 }
             }
         }
-        /*
-         C and C++ cannot compute a maximum as a reduction operation.
-         
-         Therefore, we define a private variable MY_DIFF for each thread.
-         Once they have all computed their values, we use a CRITICAL section
-         to update DIFF.
-         */
+       
         diff = 0.0;
 # pragma omp parallel shared (diff,u,w) private (i,j,diffthread)
         {
@@ -150,9 +133,7 @@ int main (int argc, char *argv[] ){
   printf ( "\n" );
   printf ( "  Error tolerance achieved.\n" );
   printf("Concluido com %d threads em %f segundos.\n", N_THREADS, (end-start));
-/*
-  Write the solution to the output file.
-*/
+
   fp = fopen ( output_file, "w" );
 
   fprintf ( fp, "%d\n", M );
@@ -170,13 +151,10 @@ int main (int argc, char *argv[] ){
 
   printf ( "\n" );
   printf ("  Solution written to the output file %s\n", output_file );
-/* 
-  All done! 
-*/
+
   printf ( "  Normal end of execution.\n" );
 
   return 0;
 
 
 }
-/******************************************************************************/
