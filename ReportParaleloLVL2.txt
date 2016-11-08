@@ -1278,36 +1278,11 @@ Concluido com 32 threads em 0.345565 segundos.
       5991  0.001000
 
   Error tolerance achieved.
-Concluido com 40 threads em 418.710023 segundos.
+Concluido com 40 threads em 0.710023 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
-
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377325
-       128  0.189162
-       256  0.094472
-       512  0.047080
-      1024  0.022267
-      2048  0.008933
-      4096  0.002633
-
-      5991  0.001000
-
-  Error tolerance achieved.
-Concluido com 48 threads em 5.066449 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
 
 REP 2
 1 thread
@@ -1513,33 +1488,11 @@ Concluido com 32 threads em 0.342175 segundos.
       5991  0.001000
 
   Error tolerance achieved.
-Concluido com 40 threads em 417.049542 segundos.
+Concluido com 40 threads em 0.669138 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
-
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377325
-       128  0.189162
-       256  0.094472
-       512  0.047080
-      1024  0.022267
-      2048  0.008933
-      4096  0.002633
-
-      5991  0.001000
-
-  Error tolerance achieved.
-Concluido com 48 threads em 4.706828 segundos.
 
 REP 3
 1 thread
@@ -1745,36 +1698,11 @@ Concluido com 32 threads em 0.341565 segundos.
       5991  0.001000
 
   Error tolerance achieved.
-Concluido com 40 threads em 419.710023 segundos.
+Concluido com 40 threads em 0.628491 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
-
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377325
-       128  0.189162
-       256  0.094472
-       512  0.047080
-      1024  0.022267
-      2048  0.008933
-      4096  0.002633
-
-      5991  0.001000
-
-  Error tolerance achieved.
-Concluido com 48 threads em 4.962449 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
 
 REP 4
 1 thread
@@ -1980,36 +1908,12 @@ Concluido com 32 threads em 0.342001 segundos.
       5991  0.001000
 
   Error tolerance achieved.
-Concluido com 40 threads em 419.723412 segundos.
+Concluido com 40 threads em 0.631457 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
 
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377325
-       128  0.189162
-       256  0.094472
-       512  0.047080
-      1024  0.022267
-      2048  0.008933
-      4096  0.002633
-
-      5991  0.001000
-
-  Error tolerance achieved.
-Concluido com 48 threads em 4.601888 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
 
 REP 5
 1 thread
@@ -2215,33 +2119,12 @@ Concluido com 32 threads em 0.342222 segundos.
       5991  0.001000
 
   Error tolerance achieved.
-Concluido com 40 threads em 420.214251 segundos.
+Concluido com 40 threads em 0.521567 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
 
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377325
-       128  0.189162
-       256  0.094472
-       512  0.047080
-      1024  0.022267
-      2048  0.008933
-      4096  0.002633
-
-      5991  0.001000
-
-  Error tolerance achieved.
-Concluido com 48 threads em 4.701232 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
