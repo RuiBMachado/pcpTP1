@@ -5,13 +5,8 @@
 #include <string.h>
 #include <omp.h>
 
-# define M 500
-# define N 500
-
-
-
-
-/******************************************************************************/
+#define M 500
+#define N 500
 
 int main (int argc, char *argv[] ){
  
@@ -38,9 +33,6 @@ int main (int argc, char *argv[] ){
 
   omp_set_num_threads(N_THREADS);
 
-/* 
-  Set the boundary values, which don't change. 
-*/
   for ( i = 1; i < M - 1; i++ )
   {
     w[i][0] = 0.0;
@@ -58,11 +50,6 @@ int main (int argc, char *argv[] ){
     w[0][j] = 0.0;
   }
 
-
-/* 
-  iterate until the  new solution W differs from the old solution U
-  by no more than EPSILON.
-*/
   iterations = 0;
   iterations_print = 1;
   printf ( "\n" );
@@ -72,9 +59,7 @@ int main (int argc, char *argv[] ){
 
   while ( epsilon <= diff )
   {
-/*
-  Save the old solution in U.
-*/
+
     for ( i = 0; i < M; i++ ) 
     {
       for ( j = 0; j < N; j++ )
@@ -82,10 +67,7 @@ int main (int argc, char *argv[] ){
         u[i][j] = w[i][j];
       }
     }
-/*
-  Determine the new estimate of the solution at the interior points.
-  The new solution W is the average of north, south, east and west neighbors.
-*/
+
     diff = 0.0;
     for ( i = 1; i < M - 1; i++ )
     {
@@ -114,9 +96,7 @@ int main (int argc, char *argv[] ){
   printf ( "\n" );
   printf ( "  Error tolerance achieved.\n" );
   printf("Concluido com %d threads em %f segundos.\n", N_THREADS, (end-start));
-/*
-  Write the solution to the output file.
-*/
+
   fp = fopen ( output_file, "w" );
 
   fprintf ( fp, "%d\n", M );
@@ -134,9 +114,7 @@ int main (int argc, char *argv[] ){
 
   printf ( "\n" );
   printf ("  Solution written to the output file %s\n", output_file );
-/* 
-  All done! 
-*/
+
   printf ( "\n" );
   printf ( "HEATED_PLATE:\n" );
   printf ( "  Normal end of execution.\n" );
@@ -145,4 +123,3 @@ int main (int argc, char *argv[] ){
 
 
 }
-/******************************************************************************/
