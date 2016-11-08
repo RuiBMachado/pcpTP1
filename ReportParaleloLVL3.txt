@@ -1286,7 +1286,7 @@ Concluido com 32 threads em 1.232806 segundos.
      13354  0.001000
 
   Error tolerance achieved.
-Concluido com 40 threads em 783.815814 segundos.
+Concluido com 40 threads em 5.523322 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
@@ -1530,7 +1530,7 @@ Concluido com 32 threads em 1.235442 segundos.
      13354  0.001000
 
   Error tolerance achieved.
-Concluido com 40 threads em 823.292210 segundos.
+Concluido com 40 threads em 7.292510 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
@@ -1774,7 +1774,7 @@ Concluido com 32 threads em 1.237583 segundos.
      13354  0.001000
 
   Error tolerance achieved.
-Concluido com 40 threads em 823.139886 segundos.
+Concluido com 40 threads em 6.832886 segundos.
 
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
