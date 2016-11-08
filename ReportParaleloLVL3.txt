@@ -1291,33 +1291,6 @@ Concluido com 40 threads em 5.523322 segundos.
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
-
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377325
-       128  0.189162
-       256  0.094474
-       512  0.047268
-      1024  0.023625
-      2048  0.011771
-      4096  0.005578
-      8192  0.002245
-
-     13354  0.001000
-
-  Error tolerance achieved.
-Concluido com 48 threads em 18.282816 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
-
 REP 2
 1 thread
 
@@ -1535,32 +1508,7 @@ Concluido com 40 threads em 7.292510 segundos.
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
 
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377325
-       128  0.189162
-       256  0.094474
-       512  0.047268
-      1024  0.023625
-      2048  0.011771
-      4096  0.005578
-      8192  0.002245
-
-     13354  0.001000
-
-  Error tolerance achieved.
-Concluido com 48 threads em 11.855523 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
 
   REP 3
 1 thread
@@ -1779,29 +1727,3 @@ Concluido com 40 threads em 6.832886 segundos.
   Solution written to the output file testeParalelo.txt
   Normal end of execution.
 
-48 threads
-
- Iteration  Change
-
-         1  25.000000
-         2  12.500000
-         4  5.468750
-         8  3.054810
-        16  1.516485
-        32  0.758108
-        64  0.377325
-       128  0.189162
-       256  0.094474
-       512  0.047268
-      1024  0.023625
-      2048  0.011771
-      4096  0.005578
-      8192  0.002245
-
-     13354  0.001000
-
-  Error tolerance achieved.
-Concluido com 48 threads em 11.843106 segundos.
-
-  Solution written to the output file testeParalelo.txt
-  Normal end of execution.
