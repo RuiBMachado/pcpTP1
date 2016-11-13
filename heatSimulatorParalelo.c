@@ -5,8 +5,8 @@
 #include <string.h>
 #include <omp.h>
 
-# define M 500
-# define N 500
+#define M 500
+#define N 500
 
 
 
